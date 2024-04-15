@@ -1,0 +1,42 @@
+name: Publish
+run-name: publish
+
+env:
+    NPM_TOKEN: ${{ secrets.NPM_PUBLISH_TOKEN }}
+
+permissions:
+    contents: read
+    packages: write
+    deployments: write
+
+on:
+    push:
+        branches:
+            - master
+
+jobs:
+    version:
+        continue-on-error: false
+        runs-on: ubuntu-22.04
+        timeout-minutes: 2
+        steps:
+            - uses: actions/checkout@v4
+            - uses: actions/setup-node@v4
+              with:
+                  node-version: 18
+                  registry-url: https://registry.npmjs.org
+            - run: |
+                  npm i -g pnpm
+                  pnpm install
+            - run: npm publish
+            - uses: softprops/action-gh-release@v1
+              with:
+                  fail_on_unmatched_files: false
+                  generate_release_notes: true
+                  tag_name: echo "$(jq -r .version package.json)"
+                  token: ${{ secrets.GITHUB_TOKEN }}
+                  files: |
+                      lib/*
+                      package.json
+                      LICENSE
+                      README.md

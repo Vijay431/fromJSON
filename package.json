@@ -1,0 +1,67 @@
+{
+	"name": "fromjson",
+	"displayName": "fromJSON",
+	"description": "Manipulate JSON data at your ease",
+	"version": "0.0.1",
+	"repository": {
+		"url": "git+https://github.com/Vijay431/fromJSON.git"
+	},
+	"publishConfig": {
+		"access": "public",
+		"registry": "https://registry.npmjs.org"
+	},
+	"author": {
+		"email": "vijayanand431@gmail.com",
+		"name": "Vijay Gangatharan"
+	},
+	"license": "MIT",
+	"keywords": [
+		"json",
+		"json manipulation",
+		"json parser",
+		"json manipulator"
+	],
+	"exports": {
+		".": {
+			"default": "lib/esmnext/src/commands/index.js",
+			"import": "lib/esmnext/src/commands/index.d.ts",
+			"require": "lib/cjs/src/commands/index.js",
+			"types": "lib/types/src/commands/index.d.ts"
+		}
+	},
+	"engineStrict": true,
+	"engines": {
+		"node": ">=18"
+	},
+	"scripts": {
+		"build": "tsc -b tsconfig.cjs.json tsconfig.esm2015.json tsconfig.esm2020.json tsconfig.esmnext.json tsconfig.types.json",
+		"prepublishOnly": "pnpm run build"
+	},
+	"dependencies": {
+		"archiver": "^5.3.1",
+		"commander": "^10.0.1",
+		"figlet": "^1.6.0",
+		"tslib": "^2.6.2"
+	},
+	"devDependencies": {
+		"@types/archiver": "^5.3.2",
+		"@types/chai": "^4.3.11",
+		"@types/figlet": "^1.5.6",
+		"@types/node": "^18.16.19",
+		"@types/spinnies": "^0.5.3",
+		"@typescript-eslint/eslint-plugin": "^5.62.0",
+		"@typescript-eslint/parser": "^5.62.0",
+		"eslint": "^8.45.0",
+		"eslint-config-prettier": "^8.10.0",
+		"eslint-plugin-prettier": "^5.1.2",
+		"eslint-plugin-security": "^2.1.0",
+		"husky": "^8.0.3",
+		"lint-staged": "^15.2.0",
+		"prettier": "^3.1.1",
+		"shx": "^0.3.4",
+		"spinnies": "^0.5.1",
+		"ts-node": "^10.9.2",
+		"typedoc": "^0.25.12",
+		"typescript": "^5.1.6"
+	}
+}

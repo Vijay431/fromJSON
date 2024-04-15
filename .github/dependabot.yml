@@ -1,0 +1,17 @@
+version: 2
+
+updates:
+  - package-ecosystem: "npm"
+    directory: "/"
+    schedule:
+      interval: "daily"
+      timezone: "Asia/Kolkata"
+    open-pull-requests-limit: 10
+    rebase-strategy: "auto"
+    assignees:
+      - "Vijay431"
+    commit-message:
+      prefix: "FIXME:"
+    target-branch: "dependencies"
+    labels:
+      - "dependencies"

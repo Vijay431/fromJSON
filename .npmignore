@@ -1,0 +1,6 @@
+TODO.md
+tsconfig*.json
+*.tgz
+
+.github/**
+src/**

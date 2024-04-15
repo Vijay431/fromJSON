@@ -1,0 +1,24 @@
+enhancement: src/*
+
+documentation:
+  - "*.md"
+  - LICENSE
+
+lint:
+  - .eslint*
+  - .prettier*
+  - .lintstagedrc
+
+scripts:
+  - .husky/*
+  - .github/*
+  - .circleci/*
+  - .husky/*
+
+dependencies:
+  - package*.json
+
+configurations:
+  - tsconfig*.json
+  - .npmrc
+  - .npmignore

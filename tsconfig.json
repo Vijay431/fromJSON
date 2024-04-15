@@ -1,0 +1,17 @@
+{
+	"compilerOptions": {
+		"esModuleInterop": true,
+		"skipLibCheck": true,
+		"resolveJsonModule": true,
+
+		"strict": true,
+		"typeRoots": ["node_modules/@types"],
+
+		"forceConsistentCasingInFileNames": true,
+		"noImplicitAny": true,
+		"noUnusedLocals": true,
+		"noUnusedParameters": true,
+		"importHelpers": true
+	},
+	"include": ["src/**/*.ts"]
+}
